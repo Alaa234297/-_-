@@ -1,0 +1,323 @@
+/* إعدادات عامة */
+body {
+  font-family: 'Arial', sans-serif;
+  background: #fff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+}
+body {
+  background-image: url('https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-4f44-620a-8c76-d8da0202971e/raw?se=2025-04-20T19%3A19%3A04Z&sp=r&sv=2024-08-04&sr=b&scid=535f3c35-3ed9-5a29-9351-194e0b7fe32a&skoid=e825dac8-9fae-4e05-9fdb-3d74e1880d5a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-20T17%3A32%3A53Z&ske=2025-04-21T17%3A32%3A53Z&sks=b&skv=2024-08-04&sig=RSf6hksa6J33d0WE7bqMbPYadIseO0uDSDcojQ6R7DA%3D');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+}
+
+
+/* رأس الموقع */
+.top-header h1 {
+  font-size: 3em;
+  margin: 0;
+  color: #fff; /* لون أبيض */
+  font-family: 'Changa', sans-serif; /* خط المحقق */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.top-header {
+  background: url('https://shbabbek.com/upload/webp/upload20231019_144408_52RaXpng_750.webp') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+  position: relative;
+}
+.top-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.top-header .container {
+  position: relative;
+  z-index: 1;
+}
+.top-header h1 {
+  font-size: 3em;
+  margin: 0;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+.top-header p {
+  font-size: 1.3em;
+  margin-top: 10px;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #e30a17, #009e49, #fff, #000); /* تدرج للألوان: الأحمر، الأخضر، الأبيض، الأسود */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+
+/* القسم التعريفي */
+.intro-section {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px 10px;
+  border-radius: 10px;
+  margin: 30px auto;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.intro-section h2 {
+  font-size: 2.2em;
+  color: #e74c3c;
+}
+.intro-section p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* أزرار */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #dc3545;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin: 10px 5px;
+}
+.btn:hover {
+  background-color: #c82333;
+}
+
+/* مجموعة الأزرار */
+.buttons-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* النموذج */
+form {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  margin: 30px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+form h2 {
+  margin-bottom: 1.5rem;
+  color: #c0392b;
+}
+form input,
+form select,
+form button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+form button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+form button:hover {
+  background-color: #c0392b;
+}
+
+/* معلومات الإصابة */
+.injury-info {
+  margin-top: 15px;
+  color: #333;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+/* زر الطوارئ */
+.emergency-contact {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+.emergency-btn {
+  background-color: #e74c3c;
+  color: white;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+.emergency-btn:hover {
+  background-color: #c0392b;
+}
+
+/* الفوتر */
+footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #333;
+  color: white;
+  font-size: 14px;
+}
+.footer-text {
+  margin: 0;
+}
+.footer-icons {
+  margin-top: 10px;
+}
+.footer-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+.footer-icons a:hover {
+  color: #1abc9c;
+}
+
+/* قسم الصور */
+.image-section {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+.image-section img {
+  width: 40px;
+  height: 40px;
+}
+
+/* توزيع النموذج والصورة */
+main.two-columns {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+section {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+}
+
+/* زر تسجيل صوت الطفل */
+.child-voice-button {
+  background-color: #dc3545;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 16px;
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.child-voice-button:hover {
+  background-color: #b52a2a;
+}
+/* تنسيق النافذة المنبثقة */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* يبدأ مخفي */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+.popup-content h2 {
+    color: #e74c3c;
+    font-size: 1.8em;
+}
+
+.popup-content p {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.emergency-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.emergency-btn:hover {
+    background-color: #c0392b;
+}
+
+.close-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background-color: #555;
+}
+
+/* باقي تنسيقات الصفحة الرئيسية */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+.top-header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.top-header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.top-header p {
+    font-size: 1.2em;
+}

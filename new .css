@@ -1,0 +1,152 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; /* Reset default body margin */
+    padding: 0; /* Reset default body padding */
+}
+
+header {
+    text-align: center;
+    padding: 1rem;
+    background-color: #dc3545;
+    color: white;
+}
+
+header img.logo {
+    width: 70px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 90%;
+    max-width: 600px;
+}
+
+.form-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.form-section label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.form-section select,
+.form-section input[type="text"],
+.form-section input[type="hidden"],
+.form-section button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-section button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-section button:hover {
+    background-color: #0056b3;
+}
+
+.map-section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+.map-section h2 {
+    text-align: center;
+    padding: 1rem 0;
+    margin: 0;
+    color: #333;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#map {
+    height: 300px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #343a40;
+    color: white;
+    margin-top: 2rem;
+}
+
+.lang-switch {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.lang-switch button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border: none;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lang-switch button:hover {
+    background-color: #ddd;
+}
+
+/* 3D Map Button */
+.form-section button#view3DMap {
+    margin-top: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.form-section button#view3DMap:hover {
+    background-color: #0056b3;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    .form-section,
+    .map-section {
+        width: 95%;
+    }
+}

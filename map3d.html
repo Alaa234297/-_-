@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Map - Nearby Hospitals</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" rel="stylesheet" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Rescue Signal - Nearby Hospitals</h1>
+        <p>Find the nearest hospital</p>
+    </header>
+
+    <main>
+        <!-- Button to go back to the homepage -->
+        <a href="index.html" class="btn" style="display: inline-block; padding: 10px 20px; background-color: #e74c3c; color: white; text-decoration: none; border-radius: 8px;" id="backBtn">
+            <i class="fas fa-home"></i> Back to Homepage
+        </a>
+
+        <!-- Leaflet map -->
+        <div id="map" style="height: 400px;"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Rescue Signal Initiative</p>
+    </footer>
+
+    <script>
+        // Initialize Leaflet map
+        const map = L.map('map').setView([51.505, -0.09], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add a marker for the hospital location (for demonstration purposes)
+        const hospitalIcon = L.icon({
+            iconUrl: 'https://example.com/hospital-icon.png',
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        });
+
+        L.marker([51.505, -0.09], {icon: hospitalIcon}).addTo(map)
+            .bindPopup("<b>Hospital Name</b><br>Address")
+            .openPopup();
+
+        // Fixing the "Back to Homepage" button functionality
+        document.getElementById("backBtn").addEventListener("click", function(event) {
+            event.preventDefault();  // Prevent default action to avoid page reload
+            window.location.href = "index.html";  // Redirect to the homepage
+        });
+    </script>
+</body>
+</html>

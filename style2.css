@@ -1,0 +1,157 @@
+/* عام */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #e74c3c;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* تصميم الأطباء */
+.doctors-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.doctor-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 230px;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.doctor-card img {
+    width: 90px; 
+    height: 90px; 
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #e74c3c;
+    transition: border-color 0.3s ease;
+}
+
+.doctor-card h2 {
+    font-size: 1.3em;
+    color: #333;
+    margin: 10px 0;
+}
+
+.doctor-card p {
+    font-size: 1em;
+    color: #777;
+}
+
+.doctor-card:hover {
+    transform: translateY(-10px);
+    background-color: #f1f1f1;
+    color: #000;
+}
+
+.doctor-card:hover img {
+    border-color: #e74c3c;
+}
+
+/* تأثيرات التمرير */
+.doctor-card:hover h2,
+.doctor-card:hover p {
+    color: #333;
+}
+
+/* وحدات الإنقاذ */
+.rescue-section {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.rescue-section h2 {
+    font-size: 1.6em;
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.rescue-section ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.rescue-section li {
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    width: 220px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rescue-section li:hover {
+    background-color: #c0392b;
+    transform: translateY(-5px);
+}
+
+.rescue-section li i {
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+/* زر العودة */
+.back-button {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-button a {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.back-button a:hover {
+    background-color: #c0392b;
+}
+
+/* التذييل */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

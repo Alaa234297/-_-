@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>الإسعافات الأولية - Rescue Signal</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="top-header">
+    <div class="container">
+      <h1><i class="fas fa-kit-medical"></i> الإسعافات الأولية</h1>
+      <p>تعلم كيف تتصرف في حالات الطوارئ لإنقاذ الحياة</p>
+      <a href="index.html" class="btn"><i class="fas fa-house"></i> العودة للصفحة الرئيسية</a>
+    </div>
+  </header>
+
+  <main class="content-section">
+    <h2><i class="fas fa-play-circle"></i> فيديوهات تعليمية مهمة</h2>
+
+    <div class="video-grid">
+      <div class="video-card">
+        <h3><i class="fas fa-tint"></i> كيفية إيقاف النزيف</h3>
+        <iframe width="100%" height="215" src="https://www.youtube.com/embed/ZWRlTn4D8nM" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="video-card">
+        <h3><i class="fas fa-fire"></i> التعامل مع الحروق</h3>
+        <iframe width="100%" height="215" src="https://www.youtube.com/embed/IUsQRxBWuw4" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="video-card">
+        <h3><i class="fas fa-heartbeat"></i> إنعاش القلب والرئتين (CPR)</h3>
+        <iframe width="100%" height="215" src="https://www.youtube.com/embed/yUkwk4sqWJQ" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p class="footer-text">&copy; 2025 مبادرة Rescue Signal</p>
+  </footer>
+
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .top-header {
+      background-color: #dc3545;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .top-header h1 {
+      margin-bottom: 10px;
+    }
+
+    .top-header .btn {
+      background-color: #fff;
+      color: #dc3545;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .top-header .btn:hover {
+      background-color: #f1f1f1;
+    }
+
+    .content-section {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .video-card {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .video-card h3 {
+      margin-bottom: 10px;
+      color: #dc3545;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+    }
+  </style>
+
+  <script>
+    gsap.from("main", {
+      opacity: 0,
+      y: 30,
+      duration: 1
+    });
+  </script>
+
+</body>
+</html>

@@ -1,39 +1,42 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
   <title>نداء النجاة</title>
+
+  <!-- الخطوط -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Changa:wght@700&display=swap" rel="stylesheet">
+
+  <!-- أيقونة التبويب -->
+  <link rel="icon" href="https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-d308-61f7-b4f7-fdc423ab4603/raw?se=2025-04-21T09%3A31%3A34Z&sp=r&sv=2024-08-04&sr=b&scid=7184c3cf-5497-5053-8f42-ef20da4f1955&skoid=9370dd2b-ca43-4270-bed5-18b1b71f8fa0&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-21T07%3A49%3A05Z&ske=2025-04-22T07%3A49%3A05Z&sks=b&skv=2024-08-04&sig=FNKRC9e3SEyCFGa7heWHb/nnkAJ9PtG%2B2DcdrG4gVp4%3D" type="image/png" />
+
+  <!-- ملفات خارجية -->
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link rel="icon" href="https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-d308-61f7-b4f7-fdc423ab4603/raw?se=2025-04-21T09%3A31%3A34Z&sp=r&sv=2024-08-04&sr=b&scid=7184c3cf-5497-5053-8f42-ef20da4f1955&skoid=9370dd2b-ca43-4270-bed5-18b1b71f8fa0&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-21T07%3A49%3A05Z&ske=2025-04-22T07%3A49%3A05Z&sks=b&skv=2024-08-04&sig=FNKRC9e3SEyCFGa7heWHb/nnkAJ9PtG%2B2DcdrG4gVp4%3D" type="image/png" />
-
 </head>
+
 <body>
-  <!-- زر الاتصال بالطوارئ -->
+
+  <!-- زر الاتصال -->
   <div class="emergency-contact">
-    <a href="tel:100" class="emergency-btn" aria-label="اتصال بالطوارئ 100">
-      اتصال بالطوارئ 100
-    </a>
+    <a href="tel:100" class="emergency-btn">اتصال بالطوارئ 100</a>
   </div>
 
-  <!-- رأس الموقع -->
+  <!-- رأس الصفحة -->
   <header class="top-header">
     <div class="container">
       <h1 id="site-title">نداء النجاة</h1>
       <p id="site-subtitle">مساعدتك في حالات الطوارئ هي أولويتنا</p>
-
-      <!-- زر الترجمة مع أيقونة -->
       <button onclick="setLanguage('en')" class="translate-btn">
         <i class="fas fa-language"></i>
       </button>
     </div>
   </header>
 
-  <!-- القسم التعريفي -->
+  <!-- مقدمة -->
   <section class="intro-section">
     <h2 id="intro-title"><i class="fas fa-hand-holding-medical"></i> مرحباً بك!</h2>
     <p id="intro-description">نحن هنا لمساعدتك في أي وقت تحتاج فيه للمساعدة.</p>
@@ -48,6 +51,7 @@
     </div>
   </section>
 
+  <!-- النموذج -->
   <main>
     <form action="submit.php" method="post" id="rescueForm">
       <h2>إرسال إشارة طوارئ</h2>
@@ -58,21 +62,33 @@
       <label for="type">نوع الإصابة:</label>
       <select name="type" id="type" required onchange="updateTypeInfo()">
         <option value="">-- اختر نوع الإصابة --</option>
-        <option value="bleeding">نزيف</option>
-        <option value="broken-bone">كسر</option>
-        <option value="burn">حرق</option>
-        <option value="unconscious">فقدان وعي</option>
-        <option value="other">أخرى</option>
+        <optgroup label="إصابات جسدية">
+          <option value="bleeding">نزيف</option>
+          <option value="broken-bone">كسر</option>
+          <option value="burn">حرق</option>
+          <option value="bruise">كدمة</option>
+          <option value="cut">جرح</option>
+        </optgroup>
+        <optgroup label="حالات طبية">
+          <option value="unconscious">فقدان وعي</option>
+          <option value="breathing">صعوبة في التنفس</option>
+          <option value="heart">ألم في الصدر</option>
+          <option value="seizure">نوبة</option>
+        </optgroup>
+        <optgroup label="أخرى">
+          <option value="shock">صدمة</option>
+          <option value="other">أخرى</option>
+        </optgroup>
       </select>
+
+      <i id="type-icon" class="fas"></i>
+      <div id="type-description" class="type-info"></div>
 
       <label>الجنس:</label>
       <div class="gender-selection">
         <input type="radio" name="gender" value="male" id="male" required /><label for="male">ذكر</label>
         <input type="radio" name="gender" value="female" id="female" required /><label for="female">أنثى</label>
       </div>
-
-      <i id="type-icon" class="fas"></i>
-      <div id="type-description" class="type-info"></div>
 
       <input type="hidden" name="latitude" id="latitude" />
       <input type="hidden" name="longitude" id="longitude" />
@@ -85,15 +101,12 @@
       <button type="submit">🚨 إرسال الإشارة</button>
     </form>
 
-    <!-- القسم السفلي مع الأيقونة الجديدة -->
     <section class="image-section">
-      <img
-        src="https://thawra.sy/wp-content/uploads/2022/06/15-6.jpg"
-        alt="Icon"
-      />
+      <img src="https://thawra.sy/wp-content/uploads/2022/06/15-6.jpg" alt="Icon" />
     </section>
   </main>
 
+  <!-- التذييل -->
   <footer>
     <p class="footer-text">&copy; 2025 مبادرة نداء النجاة</p>
     <div class="footer-icons">
@@ -103,126 +116,117 @@
     </div>
   </footer>
 
+  <!-- سكربتات -->
   <script>
-    gsap.from(".intro-section, form, .image-section", {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      stagger: 0.3
-    });
+    function updateTypeInfo() {
+      const type = document.getElementById("type").value;
+      const icon = document.getElementById("type-icon");
+      const description = document.getElementById("type-description");
+
+      switch (type) {
+        case "bleeding":
+          icon.className = "fas fa-tint";
+          description.textContent = "إصابة بنزيف تحتاج إلى إسعاف فوري.";
+          break;
+        case "broken-bone":
+          icon.className = "fas fa-bone";
+          description.textContent = "كسر في العظام - يرجى عدم تحريك المصاب.";
+          break;
+        case "burn":
+          icon.className = "fas fa-fire";
+          description.textContent = "حروق بدرجات مختلفة.";
+          break;
+        case "bruise":
+          icon.className = "fas fa-hand-paper";
+          description.textContent = "كدمة سطحية أو تحت الجلد.";
+          break;
+        case "cut":
+          icon.className = "fas fa-scissors";
+          description.textContent = "جرح يحتاج إلى تنظيف أو خياطة.";
+          break;
+        case "unconscious":
+          icon.className = "fas fa-bed";
+          description.textContent = "حالة فقدان وعي، يجب طلب المساعدة فوراً.";
+          break;
+        case "breathing":
+          icon.className = "fas fa-wind";
+          description.textContent = "ضيق في التنفس أو اختناق.";
+          break;
+        case "heart":
+          icon.className = "fas fa-heartbeat";
+          description.textContent = "ألم في الصدر، قد يكون نذير لنوبة قلبية.";
+          break;
+        case "seizure":
+          icon.className = "fas fa-bolt";
+          description.textContent = "نوبة مفاجئة - يرجى عدم محاولة تثبيت المصاب.";
+          break;
+        case "shock":
+          icon.className = "fas fa-exclamation-triangle";
+          description.textContent = "علامات صدمة جسدية أو نفسية.";
+          break;
+        case "other":
+          icon.className = "fas fa-question-circle";
+          description.textContent = "حالة غير مصنفة، يرجى التوضيح لاحقاً.";
+          break;
+        default:
+          icon.className = "fas";
+          description.textContent = "";
+      }
+    }
 
     function getLocation() {
       if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          function(position) {
-            document.getElementById("latitude").value = position.coords.latitude;
-            document.getElementById("longitude").value = position.coords.longitude;
-            alert(
-              "تم الحصول على الموقع: خط العرض " +
-                position.coords.latitude +
-                "، خط الطول " +
-                position.coords.longitude
-            );
-          },
-          function(error) {
-            alert("حدث خطأ أثناء الحصول على الموقع: " + error.message);
-          }
-        );
+        navigator.geolocation.getCurrentPosition(function(position) {
+          document.getElementById("latitude").value = position.coords.latitude;
+          document.getElementById("longitude").value = position.coords.longitude;
+          alert("تم تحديد الموقع بنجاح.");
+        }, function(error) {
+          alert("فشل في الحصول على الموقع: " + error.message);
+        });
       } else {
-        alert("الميزة غير مدعومة في هذا المتصفح.");
+        alert("المتصفح لا يدعم تحديد الموقع.");
       }
     }
 
-    function setLanguage(language) {
-      if (language === "en") {
-        document.getElementById("site-title").textContent = "Rescue Signal";
-        document.getElementById("site-subtitle").textContent = "Your assistance in emergencies is our priority";
-        document.getElementById("intro-title").textContent = "Welcome!";
-        document.getElementById("intro-description").textContent = "We are here to help you whenever you need assistance.";
-        document.getElementById("type-description").textContent = "Choose the type of injury.";
-        document.querySelector("label[for='name']").textContent = "Your Name:";
-        document.querySelector("label[for='type']").textContent = "Injury Type:";
-        document.querySelector("label[for='male']").textContent = "Male";
-        document.querySelector("label[for='female']").textContent = "Female";
-        document.querySelector("button[type='submit']").textContent = "🚨 Submit Signal";
+    function startVoice() {
+      if (!('webkitSpeechRecognition' in window)) {
+        alert("التعرف على الصوت غير مدعوم.");
+        return;
       }
-    }
 
-    // تعيين اللغة الافتراضية عند تحميل الصفحة
-    window.onload = function() {
-      // اللغة الافتراضية هي العربية
+      const recognition = new webkitSpeechRecognition();
+      recognition.lang = "ar-SA";
+
+      recognition.onstart = function () {
+        alert("تحدث الآن...");
+      };
+
+      recognition.onresult = function (event) {
+        const transcript = event.results[0][0].transcript;
+        document.getElementById("type-description").textContent = "أنت قلت: " + transcript;
+
+        // تحديد النوع من الصوت
+        if (transcript.includes("نزيف")) document.getElementById("type").value = "bleeding";
+        else if (transcript.includes("كسر")) document.getElementById("type").value = "broken-bone";
+        else if (transcript.includes("حرق")) document.getElementById("type").value = "burn";
+        else if (transcript.includes("كدمة")) document.getElementById("type").value = "bruise";
+        else if (transcript.includes("جرح")) document.getElementById("type").value = "cut";
+        else if (transcript.includes("وعي")) document.getElementById("type").value = "unconscious";
+        else if (transcript.includes("تنفس")) document.getElementById("type").value = "breathing";
+        else if (transcript.includes("قلب")) document.getElementById("type").value = "heart";
+        else if (transcript.includes("نوبة")) document.getElementById("type").value = "seizure";
+        else if (transcript.includes("صدمة")) document.getElementById("type").value = "shock";
+        else document.getElementById("type").value = "other";
+
+        updateTypeInfo();
+      };
+
+      recognition.onerror = function (event) {
+        alert("خطأ صوتي: " + event.error);
+      };
+
+      recognition.start();
     }
   </script>
-
-  <!-- نافذة الاتصال بالطوارئ قبل الصفحة الرئيسية -->
-  <div id="emergency-popup" class="popup">
-    <div class="popup-content">
-      <h2>اتصال بالطوارئ</h2>
-      <p>إذا كنت بحاجة إلى مساعدة طارئة، اضغط على الزر للاتصال فوراً.</p>
-      <a href="tel:100" class="emergency-btn">اتصال بالطوارئ 100</a>
-      <button id="close-popup" class="close-btn">إغلاق</button>
-    </div>
-  </div>
-
-  <!-- باقي المحتوى في الصفحة الرئيسية -->
-  <div class="main-content">
-    <!-- باقي الصفحة... -->
-  </div>
-  
-  <script>
-    // إخفاء نافذة الاتصال بعد الضغط على الزر أو الإغلاق
-    document.getElementById('close-popup').addEventListener('click', function() {
-      document.getElementById('emergency-popup').style.display = 'none';
-    });
-    
-    // إظهار النافذة فور تحميل الصفحة
-    window.onload = function() {
-      document.getElementById('emergency-popup').style.display = 'block';
-    };
-  </script>
-
-<script>
-  // التحقق من دعم المتصفح للتعرف الصوتي
-  function startVoice() {
-    if (!('webkitSpeechRecognition' in window)) {
-      alert("التعرف على الصوت غير مدعوم في هذا المتصفح.");
-      return;
-    }
-
-    const recognition = new webkitSpeechRecognition();
-    recognition.lang = "ar-SA"; // اللغة العربية - السعودية
-
-    recognition.onstart = function () {
-      alert("جارٍ الاستماع، تفضل بالتحدث...");
-    };
-
-    recognition.onresult = function (event) {
-      const transcript = event.results[0][0].transcript;
-      document.getElementById("type-description").textContent = "أنت قلت: " + transcript;
-
-      // محاولة تعبئة نوع الإصابة بناءً على الصوت
-      if (transcript.includes("نزيف")) {
-        document.getElementById("type").value = "bleeding";
-      } else if (transcript.includes("كسر")) {
-        document.getElementById("type").value = "broken-bone";
-      } else if (transcript.includes("حرق")) {
-        document.getElementById("type").value = "burn";
-      } else if (transcript.includes("فقدان") || transcript.includes("وعي")) {
-        document.getElementById("type").value = "unconscious";
-      } else {
-        document.getElementById("type").value = "other";
-      }
-
-      updateTypeInfo(); // تحديث الأيقونة والوصف
-    };
-
-    recognition.onerror = function (event) {
-      alert("حدث خطأ أثناء التعرف على الصوت: " + event.error);
-    };
-
-    recognition.start();
-  }
-</script>
-
 </body>
 </html>

@@ -1,5 +1,5 @@
 function getLocation() {function updateInjuryInfo() {
-    const injuryInfo = {
+const injuryInfo = {
         bleeding: {
             description: "🩸 يجب محاولة إيقاف النزيف باستخدام ضمادة نظيفة والضغط المباشر. إذا كان النزيف شديدًا، يجب استدعاء خدمات الطوارئ فورًا.",
             icon: "fas fa-tint", // أيقونة نزيف
@@ -165,4 +165,58 @@ if (SpeechRecognition) {
   }
 </script>
 
-</script>
+function updateTypeInfo() {
+  const type = document.getElementById("type").value;
+  const icon = document.getElementById("type-icon");
+  const description = document.getElementById("type-description");
+
+  switch (type) {
+    case "bleeding":
+      icon.className = "fas fa-tint";
+      description.textContent = "إصابة بنزيف تحتاج إلى إسعاف فوري.";
+      break;
+    case "broken-bone":
+      icon.className = "fas fa-bone";
+      description.textContent = "كسر في العظام - يرجى عدم تحريك المصاب.";
+      break;
+    case "burn":
+      icon.className = "fas fa-fire";
+      description.textContent = "حروق بدرجات مختلفة.";
+      break;
+    case "bruise":
+      icon.className = "fas fa-hand-paper";
+      description.textContent = "كدمة سطحية أو تحت الجلد.";
+      break;
+    case "cut":
+      icon.className = "fas fa-scissors";
+      description.textContent = "جرح يحتاج إلى تنظيف أو خياطة.";
+      break;
+    case "unconscious":
+      icon.className = "fas fa-bed";
+      description.textContent = "حالة فقدان وعي، يجب طلب المساعدة فوراً.";
+      break;
+    case "breathing":
+      icon.className = "fas fa-wind";
+      description.textContent = "ضيق في التنفس أو اختناق.";
+      break;
+    case "heart":
+      icon.className = "fas fa-heartbeat";
+      description.textContent = "ألم في الصدر، قد يكون نذير لنوبة قلبية.";
+      break;
+    case "seizure":
+      icon.className = "fas fa-bolt";
+      description.textContent = "نوبة مفاجئة - يرجى عدم محاولة تثبيت المصاب.";
+      break;
+    case "shock":
+      icon.className = "fas fa-exclamation-triangle";
+      description.textContent = "علامات صدمة جسدية أو نفسية.";
+      break;
+    case "other":
+      icon.className = "fas fa-question-circle";
+      description.textContent = "حالة غير مصنفة، يرجى التوضيح لاحقاً.";
+      break;
+    default:
+      icon.className = "fas";
+      description.textContent = "";
+  }
+}
